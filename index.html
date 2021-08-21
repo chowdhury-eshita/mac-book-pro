@@ -27,48 +27,49 @@
                         magic keyboard.</p>
                     <div class="mt-5">
                         <h5 class="fw-bold">Memory</h5>
-                        <button class="border-2 rounded">8GB unified memory</button>
+                        <button id="memory-8" class="border-2 rounded">8GB unified memory</button>
                         <button id="memory-16" class="border-2 rounded">16GB unified memory</button>
                     </div>
                     <div class="mt-5">
                         <h5 class="fw-bold">Storage</h5>
-                        <button id="storage-256" class="border-2 rounded">256GB SSD storage</button>
+                        <button id="storage-256" class="border-2 rounded">512GB SSD storage</button>
                         <button id="storage-512" class="border-2 rounded">512GB SSD storage</button>
                         <button id="storage-1tb" class="border-2 rounded">1TB SSD storage</button>
                     </div>
                     <div class="mt-5">
                         <h5 class="fw-bold">Choose your delivery option</h5>
-                        <button class="border-2 rounded">Free Delivery within 15 days</button>
-                        <button class="border-2 rounded">Argent 7 days delivery charge $20</button>
+                        <button id="free-delivery" class="border-2 rounded">Free Delivery within 15 days</button>
+                        <button id="premium-delivery" class="border-2 rounded">Argent 7 days delivery charge
+                            $20</button>
                     </div>
                     <div class="mt-5">
                         <table class="table">
                             <tr>
                                 <td class="fw-bold">Best Price</td>
-                                <td class="fw-bold">$<span>1299</span></td>
+                                <td class="fw-bold">$<span id="best-price">1299</span></td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Extra Memory Cost</td>
-                                <td id="extra-memory-cost" class="fw-bold">$<span>0</span></td>
+                                <td class="fw-bold">$<span id="extra-cost-memory">0</span></td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Extra Storage Cost</td>
-                                <td id="extra-storage-cost" class="fw-bold">$<span>0</span></td>
+                                <td class="fw-bold">$<span id="extra-cost-storage">0</span></td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Delivery Charge</td>
-                                <td id="delivery-cost" class="fw-bold">$<span>0</span></td>
+                                <td class="fw-bold">$<span id="delivery-cost">0</span></td>
                             </tr>
                             <tfoot>
                                 <td class="fw-bold">Total Price</td>
-                                <td id="total-price" class="fw-bold">$<span>1299</span></td>
+                                <td class="fw-bold">$<span id="total-price">1299</span></td>
                             </tfoot>
                         </table>
                     </div>
                     <div class="my-3">
                         <h6 class="">Add Promo Code</h6>
-                        <input class="border border-2 rounded" type="text">
-                        <button class="btn btn-danger py-1">Apply</button>
+                        <input id="promo-code-input" class="border border-2 rounded" type="text">
+                        <button id="promo-code-submit" class="btn btn-danger py-1">Apply</button>
                     </div>
                 </div>
             </div>
@@ -77,7 +78,7 @@
     </main>
 
     <footer>
-        <h1 class="text-center">Total: $<span>1299</span></h1>
+        <h1 class="text-center">Total: $<span id="sub-total-price">1299</span></h1>
     </footer>
 
     <script src="js/app.js"></script>
