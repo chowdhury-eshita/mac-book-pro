@@ -1,19 +1,20 @@
-
+//total price calculation
 function getTotalPrice() {
+    //get costs
     const bestPrice = parseFloat(document.getElementById('best-price').innerText);
     const extraMemoryCost = parseFloat(document.getElementById('extra-cost-memory').innerText);
     const extraStorageCost = parseFloat(document.getElementById('extra-cost-storage').innerText);
     const deliveryCharge = parseFloat(document.getElementById('delivery-cost').innerText);
 
-
+    //calculate total
     const total = bestPrice + extraMemoryCost + extraStorageCost + deliveryCharge;
     console.log(total);
     document.getElementById('total-price').innerText = total;
     document.getElementById('sub-total-price').innerText = total;
-
+    return total;
 };
 
-//extra cost calculation for parts
+//cost calculation for extra memory
 function extraMemory(input) {
     const extraPartField = document.getElementById('extra-cost-memory');
     if (input == 'memory-8') {
@@ -33,6 +34,8 @@ document.getElementById('memory-8').addEventListener('click', function () {
 document.getElementById('memory-16').addEventListener('click', function () {
     extraMemory('memory-16');
 });
+
+//cost calculation for extra storage
 function extraStorage(input) {
     const extraPartField = document.getElementById('extra-cost-storage');
     if (input == 'storage-256') {
@@ -83,17 +86,23 @@ document.getElementById('premium-delivery').addEventListener('click', function (
     deliveryCharge(true);
 });
 
+//promo code discount price calculation
 function getDiscountPrice() {
+    //get promo code input
     const promoCode = document.getElementById('promo-code-input');
-    const promoCodeInput = promoCode.innerText;
+    const promoCodeInput = promoCode.value;
+    //get total price 
+    const total = document.getElementById('total-price');
+    const totalPrice = parseFloat(total.innerText);
     if (promoCodeInput == 'stevekaku') {
+        const discountPrice = totalPrice * .80;
         const subTotal = document.getElementById('sub-total-price');
-        const subTotalPrice = parseFloat(subTotal.innerText);
-        const discountPrice = subTotalPrice / 20;
-        promoCode.innerText = discountPrice;
+        subTotal.innerText = discountPrice;
     }
-    getTotalPrice();
+    //clear procode  field
+    promoCode.value = '';
 }
-document.getElementsById('promo-code-submit').addEventListener('click', function () {
-
+//promo code button event handler
+document.getElementById('promo-code-submit').addEventListener('click', function () {
+    getDiscountPrice();
 });
